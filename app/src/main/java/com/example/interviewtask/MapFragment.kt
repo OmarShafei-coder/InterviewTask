@@ -1,6 +1,8 @@
 package com.example.interviewtask
 
+import android.content.Context
 import android.content.Intent
+import android.content.IntentFilter
 import android.os.Bundle
 import android.view.LayoutInflater
 import android.view.View
@@ -12,15 +14,14 @@ import com.example.interviewtask.services.LocationService
 import org.osmdroid.config.Configuration
 import org.osmdroid.views.MapView
 
-
 class MapFragment : Fragment() {
-
-    private var _binding: FragmentMapBinding? = null
     private lateinit var serviceIntent: Intent
+    private lateinit var mapView: MapView
+    private lateinit var locationReceiver: LocationReceiver
+    private lateinit var filter: IntentFilter
+    private var _binding: FragmentMapBinding? = null
     // This property is only valid between onCreateView and onDestroyView.
     private val binding get() = _binding!!
-
-    private lateinit var mapView: MapView
 
     override fun onCreateView(
         inflater: LayoutInflater, container: ViewGroup?,
@@ -29,6 +30,9 @@ class MapFragment : Fragment() {
         _binding = FragmentMapBinding.inflate(inflater, container, false)
         initMapView()
         serviceIntent = Intent(requireContext(), LocationService::class.java)
+
+        locationReceiver = LocationReceiver()
+        filter = IntentFilter(CustomReceiver.ACTION_LOCATION_BROADCAST.value)
 
         binding.button.setOnClickListener {
             activity?.startService(serviceIntent)
@@ -49,6 +53,7 @@ class MapFragment : Fragment() {
     override fun onResume() {
         super.onResume()
         mapView.onResume()
+        activity?.registerReceiver(locationReceiver, filter, Context.RECEIVER_EXPORTED)
     }
 
     override fun onPause() {
@@ -60,5 +65,6 @@ class MapFragment : Fragment() {
     override fun onDestroyView() {
         super.onDestroyView()
         _binding = null
+        activity?.unregisterReceiver(locationReceiver);
     }
 }

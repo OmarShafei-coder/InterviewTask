@@ -5,14 +5,13 @@ import android.content.Intent
 import android.location.Geocoder
 import android.os.IBinder
 import android.util.Log
-import android.widget.Toast
+import com.example.interviewtask.CustomReceiver
 import java.util.Locale
 import java.util.Random
 import java.util.Timer
 import java.util.TimerTask
 
 class LocationService : Service() {
-
     override fun onBind(intent: Intent): IBinder {
         TODO("Return the communication channel to the service.")
     }
@@ -29,12 +28,15 @@ class LocationService : Service() {
     }
 
     private fun sendDataFromService() {
+        val intent = Intent(CustomReceiver.ACTION_LOCATION_BROADCAST.value)
         val random = Random()
         val latitude = 40.7128 + (random.nextDouble() - 0.5) * 0.1 // Random latitude
         val longitude = -74.0060 + (random.nextDouble() - 0.5) * 0.1 // Random longitude
-        val description = getLocationName(latitude, longitude)
-        description.let {
-            Log.d("LocationService", description.toString())
+        val locationName = getLocationName(latitude, longitude)
+        locationName?.let {
+            //send location name
+            intent.putExtra("locationName", locationName)
+            sendBroadcast(intent)
         }
     }
 
