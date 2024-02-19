@@ -1,22 +1,16 @@
-package com.example.interviewtask
+package com.example.interviewtask.ui
 
-import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.add
 import androidx.fragment.app.commit
-import com.example.interviewtask.services.LocationService
-
+import com.example.interviewtask.R
 
 class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(R.layout.activity_main)
         addFragment(savedInstanceState)
-        val serviceIntent = Intent(
-            this,
-            LocationService::class.java
-        )
     }
 
     private fun addFragment(savedInstanceState: Bundle?) {
