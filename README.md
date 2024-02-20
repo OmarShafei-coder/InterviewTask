@@ -39,5 +39,6 @@ This Android app demonstrates a simple location tracking system using background
 
 Feel free to explore, modify, and enhance the project to suit your needs!
 
+Here's a screen recording from the app, just click on the below image
 
 [![Short Video](https://img.youtube.com/vi/fGF279_to5I/0.jpg)](https://www.youtube.com/shorts/fGF279_to5I?feature=share)
