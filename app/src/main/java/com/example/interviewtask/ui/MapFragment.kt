@@ -12,9 +12,9 @@ import androidx.appcompat.app.AppCompatActivity
 import androidx.fragment.app.Fragment
 import androidx.lifecycle.ViewModelProvider
 import androidx.lifecycle.lifecycleScope
-import com.example.interviewtask.Enum
-import com.example.interviewtask.LocationReceiver
-import com.example.interviewtask.SharedViewModel
+import com.example.interviewtask.utils.Enum
+import com.example.interviewtask.receivers.LocationReceiver
+import com.example.interviewtask.viewmodels.SharedViewModel
 import com.example.interviewtask.databinding.FragmentMapBinding
 import com.example.interviewtask.models.LocationData
 import com.example.interviewtask.services.LocationService

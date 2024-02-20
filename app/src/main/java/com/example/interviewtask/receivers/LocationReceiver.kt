@@ -1,11 +1,13 @@
-package com.example.interviewtask
+package com.example.interviewtask.receivers
 
 import android.content.BroadcastReceiver
 import android.content.Context
 import android.content.Intent
 import androidx.lifecycle.ViewModelProvider
+import com.example.interviewtask.utils.Enum
 import com.example.interviewtask.models.LocationData
 import com.example.interviewtask.ui.MainActivity
+import com.example.interviewtask.viewmodels.SharedViewModel
 
 class LocationReceiver : BroadcastReceiver() {
     override fun onReceive(context: Context, intent: Intent) {

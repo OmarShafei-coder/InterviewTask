@@ -4,9 +4,10 @@ import android.app.Service
 import android.content.Intent
 import android.location.Geocoder
 import android.location.Geocoder.GeocodeListener
+import android.os.Binder
 import android.os.IBinder
 import android.util.Log
-import com.example.interviewtask.Enum
+import com.example.interviewtask.utils.Enum
 import com.example.interviewtask.models.LocationData
 import java.util.Locale
 import java.util.Random
@@ -15,8 +16,9 @@ import java.util.TimerTask
 
 
 class LocationService : Service() {
+
     override fun onBind(intent: Intent): IBinder {
-        TODO("Return the communication channel to the service.")
+        return Binder()
     }
 
     override fun onStartCommand(intent: Intent?, flags: Int, startId: Int): Int {

@@ -1,4 +1,4 @@
-package com.example.interviewtask
+package com.example.interviewtask.utils
 
 enum class Enum(val value: String) {
     ACTION_LOCATION_BROADCAST("com.example.interviewtask.ACTION_LOCATION_BROADCAST"),

@@ -1,4 +1,4 @@
-package com.example.interviewtask
+package com.example.interviewtask.viewmodels
 
 import androidx.lifecycle.ViewModel
 import com.example.interviewtask.models.LocationData
