@@ -38,3 +38,6 @@ This Android app demonstrates a simple location tracking system using background
 - This project is meant for educational purposes and serves as a foundation for understanding background services, broadcast receivers, and map integration in Android applications.
 
 Feel free to explore, modify, and enhance the project to suit your needs!
+
+
+[![Short Video](https://img.youtube.com/vi/fGF279_to5I/0.jpg)](https://www.youtube.com/shorts/fGF279_to5I?feature=share)
